@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoping</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="../imgs/Logo S.png" class="logonav">
+            </a>
+
+            <div class="nav-profile">
+                <p class="nav-profile-name">Bearbug</p>
+                <div onclick="openCart()" style="cursor: pointer;" class="nav-profile-cart">
+                    <i class="fas fa-cart-shopping"></i>
+                    <div id="cartcount" class="cartcount" style="display: none;">
+                        0
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <input onkeyup="searchtxt(this)" id="txt_search" type="text" class="sideber-search" placeholder="Search something...">
+
+            <a  onclick="searchproduct('all')" class="sidebar-items">
+                All product
+            </a>
+            <a  onclick="searchproduct('Sneakers')" class="sidebar-items">
+                Basketball shoes
+            </a>
+            <a  onclick="searchproduct('Shirt')" class="sidebar-items">
+                Basketball shirt
+            </a>
+            <a  onclick="searchproduct('Trousers')" class="sidebar-items">
+                Basketball pants
+            </a>
+        </div>
+        <div id="productlist" class="product">
+            <div class="product-items">
+                <img class="product-img" src="https://www.resellzonecesena.com/cdn/shop/files/air-jordan-1-retro-high-og-heritage-555088-161-resellzone-1.jpg?v=1717597480" alt="">
+                <p style="font-size: 1.2vw;">Air Jordan 1</p>
+                <p style="font-size: 0.9vw;">6500 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://image.goxip.com/kfBvz7WAHXfKxeXJdul7kWXiurY=/fit-in/500x500/filters:format(jpg):quality(80):fill(white)/https:%2F%2Fcdn-images.farfetch-contents.com%2F18%2F97%2F81%2F82%2F18978182_41271609_1000.jpg" alt="">
+                <p style="font-size: 1.2vw;">Nike LeBron 19 </p>
+                <p style="font-size: 0.9vw;">7000 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://sneakers.id/images/products/FJ9488-100/0_2_1800x1800.jpg" alt="">
+                <p style="font-size: 1.2vw;">NIKE KD 17 EP</p>
+                <p style="font-size: 0.9vw;">7300 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://footpatrolblog.s3.amazonaws.com/wp-content/uploads/2020/11/Nike-Kobe-5-Bruce-Lee-IG-1.jpg" alt="">
+                <p style="font-size: 1.2vw;">Nike Kobe 5</p>
+                <p style="font-size: 0.9vw;">30000 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://media.architecturaldigest.com/photos/57a11cbeb6c434ab487bc26b/4:3/w_1032,h_774,c_limit/nikes-senior-designer-explains-what-went-into-new-air-jordan-01.png" alt="">
+                <p style="font-size: 1.2vw;">Air Jordan XXXI</p>
+                <p style="font-size: 0.9vw;">4700 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/60a96da77cec4e389972dd01be7ba66c_faec/IN4247_HM1.jpg" alt="">
+                <p style="font-size: 1.2vw;">Adidas เสื้อวอร์มบาส</p>
+                <p style="font-size: 0.9vw;">2500 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/6d5a0e0f-eb69-4836-8a9b-cbd3f386fab5/AS+M+NK+TEE+OS+OC.png" alt="">
+                <p style="font-size: 1.2vw;">เสื้อยืดบาสเก็ตบอลผู้ชาย Nike</p>
+                <p style="font-size: 0.9vw;">1900 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://media.jdsports.com/i/jdsports/IN4244_020_M1?$default$&w=671&&h=671&bg=rgb(237,237,237)" alt="">
+                <p style="font-size: 1.2vw;">Adidas Basketball</p>
+                <p style="font-size: 0.9vw;">1300 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/21a5a90b-716c-418f-9720-915322ab9fb8/AS+M+NK+DF+TEE+RLGD+OC+ICON.png" alt="">
+                <p style="font-size: 1.2vw;">เสื้อยืดบาสเก็ตบอลผู้ชาย Dri-FIT Nike</p>
+                <p style="font-size: 0.9vw;">1100 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/538564/01/mod01/fnd/THA/fmt/png/%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%B7%E0%B8%94%E0%B8%9A%E0%B8%B2%E0%B8%AA%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%95%E0%B8%9A%E0%B8%AD%E0%B8%A5%E0%B8%8A%E0%B8%B2%E0%B8%A2-Technical" alt="">
+                <p style="font-size: 1.2vw;">เสื้อยืดบาสเก็ตบอลชาย Technical</p>
+                <p style="font-size: 0.9vw;">1050 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://www.cpschaps.com/media/catalog/product/c/2/c24wmqa914_red_6.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=978&width=700&canvas=700:978" alt="">
+                <p style="font-size: 1.2vw;">Basketball Loose pants</p>
+                <p style="font-size: 0.9vw;">1890 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://assets.adidas.com/images/w_600,f_auto,q_auto/3c7f94b5259b4fb1a93baf710001e9fe_9366/Basketball_Warm-Up_Pants_Green_IK8559_23_hover_model.jpg" alt="">
+                <p style="font-size: 1.2vw;">Basketball Warm-Up Pants</p>
+                <p style="font-size: 0.9vw;">1440 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/622079/02/mod01/fnd/IDN/fmt/png/Blueprint-Formstrip-Men's-Basketball-Pants" alt="">
+                <p style="font-size: 1.2vw;"> Basketball Pants | PUMA</p>
+                <p style="font-size: 0.9vw;">1200 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/4a13d3fd-1247-4e0e-b077-f12e3c859cc6/M+NK+STRTFV+WVN+PANT.png" alt="">
+                <p style="font-size: 1.2vw;">Nike Starting 5 Men's Basketball Pants</p>
+                <p style="font-size: 0.9vw;">1500 THB</p>
+            </div>
+            <div class="product-items">
+                <img class="product-img" src="https://midwaysports.com/cdn/shop/products/CW7351-010-PHSFM001.jpg?v=1633546581" alt="">
+                <p style="font-size: 1.2vw;">Nike Dri-Fit Men's Basketball Pants</p>
+                <p style="font-size: 0.9vw;">1350 THB</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalDesc" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>Detail</h2>
+            <br>
+            <div class="modaldesc-content">
+                <img id="mdd-img" class="modaldesc-img" src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8" alt="">
+                <div class="modaldesc-detail">
+                    <p id="mdd-name" style="font-size: 1.5vw;">Product name</p>
+                    <p id="mdd-price" style="font-size: 1.2vw;">1500THB</p>
+                    <br>
+                    <p id="mdd-desc" style="color: #adadad;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae culpa magnam dolorem, neque modi sunt hic explicabo perferendis vitae ea quia, aspernatur minus numquam animi exercitationem, enim iure suscipit quis!</p>
+                    <br>
+                    <div class="btn-control">
+                        <button onclick="closeModal()" class="btn">
+                            Close
+                        </button>
+                        <button onclick="addtocaet()" class="btn btn-buy">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div  id="modalCart" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>My cart</h2>
+            <br>
+           <div id="mycart" class="cartlist">
+
+                
+               
+                </div>
+                <div class="btn-control">
+                    <button onclick="closeModal()" class="btn">
+                        Cancel
+                    </button>
+                    <button class="btn btn-buy">
+                        Buy
+                    </button>
+                </div>
+           </div>
+        </div>
+    </div>
+    
+</body>
+</html>

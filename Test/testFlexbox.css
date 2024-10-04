@@ -1,0 +1,29 @@
+.content { /*ฟังชันที่เรากำหนด*/
+    display: flex; /*จากตัวหนังสือแนวตั้งเป็นแนวนอน*/ 
+    flex-direction: column; /*ทิศทางของคลอลัม*/
+    width: 400px;  /*ความกว้าง*/
+    height: 400px; /*ความสูง*/
+    border: 2px solid rgb(0, 0, 0); /*borderคือขอบที่ดำที่อยู่ข้างนอก solidคือสีที่มีความทึบ*/
+    
+}
+
+.items {
+    width: 60px;
+    height: 60px;
+    background-color: blueviolet;/*สีพื้นหลัง*/
+    border: 1px solid rgb(0, 0, 0);
+    margin: 10px;/*ระยะของขอบ*/
+    font-size: 20px; /*ขนาดตัวอักษร*/
+    text-align: center; /*การจัดตำแหน่งของข้อความ*/
+}
+
+.k {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+
+.o {
+    margin: 20px;
+}
