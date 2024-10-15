@@ -110,11 +110,11 @@ body {
 }
 
 #hero {
-    background-image: url("Photo-shi/hero4.png");
+    background-image: url("Photo-shi/AdidasBasketball.png");
     height: 90vh;
     width: 100%;
     background-size: cover;
-    background-position: top 25%   right 0 ;
+    background-position: top 25%   right 0 left 0 ;
     padding: 0 80px;
     display: flex;
     flex-direction: column;
